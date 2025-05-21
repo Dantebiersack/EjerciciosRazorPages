@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\img\bajo.png" />
+    <None Include="wwwroot\img\normal.png" />
+    <None Include="wwwroot\img\obesidad1.png" />
+    <None Include="wwwroot\img\obesidad2.png" />
+    <None Include="wwwroot\img\obesidad3.png" />
+    <None Include="wwwroot\img\sobrePeso.png" />
+  </ItemGroup>
+
+</Project>

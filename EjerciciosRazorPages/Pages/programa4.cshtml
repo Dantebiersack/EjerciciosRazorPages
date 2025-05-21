@@ -1,0 +1,43 @@
+﻿@page
+@model EjerciciosRazorPages.Pages.programa4Model
+@{
+
+}
+
+<h2>Arreglo Aleatorio</h2>
+<table style="border-collapse: collapse;">
+    <tr>
+        @foreach (var num in Model.Arreglo)
+        {
+            <td style="border: 1px solid black; padding: 3px 8px; text-align: center;">@num</td>
+        }
+    </tr>
+</table>
+
+<h3>Arreglo Ordenado</h3>
+<table style="border-collapse: collapse;">
+    <tr>
+        @foreach (var num in Model.ArregloOrdenado)
+        {
+            <td style="border: 1px solid black; padding: 3px 8px; text-align: center;">@num</td>
+        }
+    </tr>
+</table>
+
+<p><strong>Suma:</strong> @Model.Suma</p>
+<p>
+    <strong>Moda:</strong>
+    @if (Model.Modas.Count == 0)
+    {
+        <span>No hay moda</span>
+    }
+    else
+    {
+        @string.Join(" y ", Model.Modas)
+    }
+</p>
+<p><strong>Promedio:</strong> @Model.Promedio</p>
+<p><strong>Mediana:</strong> @Model.Mediana</p>
+<form method="post">
+    <button type="submit">Generar nuevo arreglo</button>
+</form>

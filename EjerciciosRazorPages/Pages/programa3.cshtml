@@ -1,0 +1,40 @@
+﻿@page
+@model EjerciciosRazorPages.Pages.programa3Model
+@{
+    ViewData["Title"] = "Evaluar (ax + by)^n";
+}
+
+<h2>Evaluar (ax + by)<sup>n</sup></h2>
+<form method="post" style="font-size: 1.2em; text-align: center; margin-top: 20px;">
+    <label>(</label>
+
+    <input asp-for="A" type="number" step="any" style="width: 60px;" /> ·
+    <input asp-for="X" type="number" step="any" style="width: 60px;" />
+
+    <label> + </label>
+
+    <input asp-for="B" type="number" step="any" style="width: 60px;" /> ·
+    <input asp-for="Y" type="number" step="any" style="width: 60px;" />
+
+    <label>)<sup></sup></label>
+    <sup><input asp-for="N" type="number" min="0" style="width: 50px;" /></sup>
+
+    <br /><br />
+    <button type="submit" style="margin-top: 10px;">Evaluar</button>
+</form>
+
+
+@if (Model.Pasos?.Count > 0)
+{
+    <h3>Desarrollo paso a paso según la formula</h3>
+    <ul>
+        @foreach (var paso in Model.Pasos)
+        {
+            <li>@paso</li>
+        }
+    </ul>
+
+    <h3>Resultado directo:</h3>
+    <p>(a·x + b·y)^n = (@Model.A × @Model.X + @Model.B × @Model.Y)^@Model.N = @Model.ResultadoDirecto</p>
+}
+

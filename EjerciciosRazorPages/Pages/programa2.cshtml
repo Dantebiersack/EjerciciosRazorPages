@@ -1,0 +1,35 @@
+﻿@page
+@model EjerciciosRazorPages.Pages.programa2Model
+@{
+
+}
+
+<h2>Cifrado César</h2>
+
+<form method="post">
+    <div>
+        <label>Mensaje:</label>
+        <input asp-for="FraseACodificar" />
+    </div>
+    <div>
+        <label>n:</label>
+        <input asp-for="N" type="number" min="1" max="25" />
+    </div>
+    <div>
+        <button type="submit" asp-page-handler="Codificar">Codificar</button>
+        <button type="submit" asp-page-handler="Decodificar">Decodificar</button>
+    </div>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.FraseCifrada))
+{
+    <div>
+        <strong>Mensaje cifrado:</strong> @Model.FraseCifrada
+    </div>
+}
+@if (!string.IsNullOrEmpty(Model.FraseDescifrada))
+{
+    <div>
+        <strong>Mensaje descifrado:</strong> @Model.FraseDescifrada
+    </div>
+}
